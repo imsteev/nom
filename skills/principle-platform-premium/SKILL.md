@@ -1,6 +1,6 @@
 ---
 name: principle-platform-premium
-description: Apply when a generic or primitive is the work, or a second call site already exists. We care about the underlying generics and primitives. Powerful abstractions, simple call sites. Less is more wins for a one-off.
+description: Apply when a stable capability or invariant belongs below multiple features. Put complexity in a well-owned generic and keep call sites simple. Syntactic duplication alone does not earn an abstraction.
 disable-model-invocation: true
 ---
 
@@ -8,8 +8,24 @@ disable-model-invocation: true
 
 We care about the underlying generics and primitives. Powerful abstractions; simple call sites.
 
-**When.** A generic or primitive is the work, or a second call site already exists.
+## Admission test
 
-**Skipped-it tell.** A "platform" helper extracted for one caller. Or the same logic copied at two call sites instead of lifted.
+Build a shared abstraction only when all are true:
 
-**Related.** Less is more wins for a one-off. Dependencies point inwards. The generic sits below the call sites, not the other way around. Type system fundamentalist keeps that generic's types simple and total.
+- Multiple features need the same capability or invariant, not merely similar syntax.
+- The shared owner can expose a smaller, more stable contract than its callers.
+- Centralizing the behavior removes policy or coordination from call sites.
+- The abstraction can be tested without knowing any one product feature.
+
+A second caller is evidence, not proof. Do not predict generic requirements from hypothetical callers.
+
+## Failure signals
+
+- A "platform" helper has one caller or encodes that caller's nouns.
+- Options accumulate so each caller can recover behavior the abstraction hid.
+- The shared layer imports a feature to finish its work.
+- Call sites stay as complex as before.
+
+## Boundary
+
+**Less is more** wins for one-off behavior. **Dependencies point inwards** places the shared owner below its consumers. **Type system fundamentalist** keeps its contract simple.

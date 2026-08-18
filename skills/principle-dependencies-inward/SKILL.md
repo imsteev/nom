@@ -1,15 +1,34 @@
 ---
 name: principle-dependencies-inward
-description: Apply when wiring layers, imports, or a cycle. Low level abstractions must not depend on higher level ones. A cycle needs a mediator or an inversion. Always ask whether A should know about B.
+description: Apply when choosing module ownership, adding an import, or breaking a cycle. Stable policy must not know volatile product or infrastructure details. Move shared knowledge to its owner or invert the edge.
 disable-model-invocation: true
 ---
 
 # Dependencies point inwards
 
-Low level abstractions must not depend on higher level ones. If there is a cycle, that indicates a mediator is necessary, or a way to invert using techniques like dependency injection. Always ask: "should A know about B?"
+Dependencies point toward the module that owns the invariant. Generic modules must not import product-specific callers. Stable policy must not import volatile UI, storage, transport, or framework details.
 
-**When.** Wiring layers, imports, or a cycle.
+Always ask: "should A know about B?"
 
-**Skipped-it tell.** A core module that imports a feature, UI, or adapter. A cycle you "fixed" with a lazy import. A knows about B when only B needed a result from A.
+## Decision rule
 
-**Related.** High premium on platform keeps generics below features. Your model is your world is the inward core those dependencies should point at.
+When adding an edge:
+
+1. Name the knowledge the edge carries.
+2. Put that knowledge in the module that owns the invariant.
+3. Pass a value when the consumer needs a result, not the producer.
+4. Invert the dependency with an interface or callback when policy must invoke a detail.
+5. Add a mediator only when coordination is a real domain responsibility.
+
+A cycle proves ownership is unresolved. A lazy import, event bus, or service locator can hide the cycle without resolving it.
+
+## Failure signals
+
+- A core or generic module imports a feature, UI, or adapter.
+- A transport or storage type leaks into domain logic.
+- Two modules know each other's private representations.
+- A cycle disappears only because resolution moved to runtime.
+
+## Boundary
+
+**High premium on platform** decides when shared capability deserves a lower common owner. **Your model is your world** defines the invariants dependencies should point toward.

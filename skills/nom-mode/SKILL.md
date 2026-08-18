@@ -16,7 +16,7 @@ Remaining triggers:
 
 - About to `AskQuestion` on a "which approach", "how should I", or "what should this do" fork → classify it before you ask. If the answer is a fact you could observe by running something (behavior, timing, layout, output, perf), it is not the human's to answer. Probe it and let the result decide. If the task is a read-only investigation whose deliverable is a cited answer, stay in it and answer from the evidence. Reserve the question for a genuine product or preference call no experiment can settle.
 - Any code → name the data shape first, per **Your model is your world**.
-- A local edit that might fight the current shape → zoom out per **First principles thinking**, then the Core triad. **Make it easy to make a change**, then **Minimum change necessary**, then **Less is more**.
+- A local edit that fights the current shape → use **First principles thinking**. If structural preparation is necessary, isolate it with **Sequence changes in verifiable units**. Then apply **Minimum change necessary** and **Less is more**.
 - Nontrivial multi-step → write a throughput checkpoint (blocking first steps, independent workstreams, shared mutable state, smallest safe decomposition). A dimension that does not apply keeps its item with `n/a: <reason>`.
 - Any prose surface → write it per **Writing the reply**. Agent-facing prose also follows Cursor's built-in **create-skill** skill.
 - Broken skill mid-task → fix it in its own change. Don't block. Don't silently work around it.
@@ -28,22 +28,21 @@ Read the leaf skill in full for any principle you apply. Each entry names when i
 
 **Core**
 
-- **Less is more** (`principle-less-is-more`). Refactoring, sizing a diff, or tempted to add code. Least code. Subtract before you add. Prefer deletion.
-- **Minimum change necessary** (`principle-minimum-change`). A fix or feature that seems to want a wide edit. If it hinges on one part, change only that, unless zooming out found a structural reason.
-- **Make it easy to make a change** (`principle-make-change-easy`). The current shape would bury the real diff. Sequence behavior-preserving refactors first so the main change stays focused. Relies on Less is more and Minimum change.
-- **First principles thinking** (`principle-first-principles`). Before a local edit. You are aware of the greater system we are trying to build. Zoom out to zoom in.
+- **Less is more** (`principle-less-is-more`). Choosing a solution shape or refactoring. Reach the outcome with the least total code and indirection. Subtract before adding.
+- **Minimum change necessary** (`principle-minimum-change`). Scoping a fix or feature. Change only what the outcome requires. Separate independently justified structural preparation from the behavior change.
+- **First principles thinking** (`principle-first-principles`). The current design forces a contortion or a new requirement changes an old assumption. Restate the goal and invariants without treating the implementation as fixed, then take the smallest step toward the right system.
 
 **Architecture**
 
-- **Your model is your world** (`principle-model-is-your-world`). Any code, especially stateful or branching. Complicated models make complicated systems. Pick the data structure that avoids kitchen sinks and rigid foundations. Normalize by default.
-- **Dependencies point inwards** (`principle-dependencies-inward`). Wiring layers, imports, or a cycle. Low level must not depend on high level. A cycle needs a mediator or an inversion. Always ask: should A know about B?
-- **High premium on platform** (`principle-platform-premium`). A generic or primitive is the work, or a second call site already exists. Powerful abstractions, simple call sites. Less is more wins for a one-off.
-- **Type system fundamentalist** (`principle-type-system`). Designing or reviewing types. Simplest definitions that make illegal states unrepresentable. No gymnastics for a single call site.
+- **Your model is your world** (`principle-model-is-your-world`). Designing state, schemas, or branching logic. Choose one authoritative representation and a data structure that keeps valid changes local. Normalize by default. Denormalize only against measured cost with explicit ownership.
+- **Dependencies point inwards** (`principle-dependencies-inward`). Choosing module ownership, adding an import, or breaking a cycle. Stable policy must not know volatile product or infrastructure details. Move knowledge to its owner or invert the edge.
+- **High premium on platform** (`principle-platform-premium`). A stable capability or invariant belongs below multiple features. Put complexity in a well-owned generic and keep call sites simple. Syntactic duplication alone does not earn an abstraction.
+- **Type system fundamentalist** (`principle-type-system`). Designing or reviewing types. Use the simplest type that excludes consequential invalid states. Do not add type machinery for precision or one caller.
 
 **Verification**
 
-- **Sequence changes in verifiable units** (`principle-verifiable-units`). Multi-step work, commits, PRs. Order so each unit can be confirmed. Some units preserve behavior, some change it.
-- **Show your work** (`principle-show-your-work`). Visual changes, or any claim that behavior moved. Screenshots or video. Before/after simulations and tests.
+- **Sequence changes in verifiable units** (`principle-verifiable-units`). Multi-step work, commits, or PRs. Put behavior-preserving preparation before the focused behavior change. Verify each unit before starting the next.
+- **Show your work** (`principle-show-your-work`). Claiming behavior, appearance, or performance changed. Capture comparable before-and-after evidence on the real path.
 
 ## Autonomy
 
