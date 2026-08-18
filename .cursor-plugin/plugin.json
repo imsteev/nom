@@ -1,20 +1,32 @@
 {
 	"name": "nom",
-	"version": "0.0.1",
+	"displayName": "nom",
+	"version": "0.1.0",
 	"description": "Principle-driven software engineering workflows for investigation, implementation, refactoring, performance work, and prototyping.",
 	"author": {
 		"name": "Stephen Chung"
 	},
 	"homepage": "https://github.com/imsteev/nom",
 	"repository": "https://github.com/imsteev/nom",
+	"license": "MIT",
 	"keywords": [
 		"nom",
+		"nom-mode",
 		"agent-mode",
 		"software-engineering",
 		"workflows",
 		"playbooks",
-		"principles"
+		"principles",
+		"unslop"
 	],
+	"category": "developer-tools",
+	"tags": [
+		"workflow",
+		"principles",
+		"playbooks",
+		"review"
+	],
+	"logo": "assets/logo.svg",
 	"skills": "./skills/",
 	"agents": "./agents/"
 }

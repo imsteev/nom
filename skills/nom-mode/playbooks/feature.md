@@ -13,5 +13,6 @@ Use for new or changed product behavior. Plan in proportion to uncertainty and b
 7. Implement the behavior and its focused tests. Avoid compatibility paths, options, and abstractions not required by the acceptance criteria.
 8. Exercise the real feature path. Check the full chain from input through state to user-visible output.
 9. Review the final diff against **Minimum change necessary** and **Less is more**. Update public contracts or documentation only when behavior exposed to consumers changed.
+10. Apply the **unslop** skill to the reply. Read it in full.
 
 **Reply:** what changed for the user, the data shape and design choice, the real-path verification, and any open decision.

@@ -10,5 +10,6 @@ Use a prototype to answer an empirical design or behavior question cheaply. The 
 4. Exercise the artifact on the matching surface. Capture screenshots for visual differences, video for motion, output for behavior, and measurements for timing.
 5. Compare the alternatives against the decision criterion. Make a recommendation, including a no-build result when none earns production work.
 6. Treat the artifact as throwaway. Carry the chosen behavior, constraints, and evidence into Feature. Do not promote prototype structure into production by default.
+7. Apply the **unslop** skill to the reply. Read it in full.
 
 **Reply:** the decision tested, alternatives, observed evidence, recommendation, and scratch artifact location. State plainly that the prototype is not production code.

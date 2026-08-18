@@ -13,5 +13,6 @@ Every shipped line must trace to evidence. A defensive change that might help is
 7. Implement the fix. Remove disproven experiments, temporary instrumentation, speculative guards, and unrelated cleanup.
 8. Run the original reproduction on the same path. Run focused tests, then the broader checks justified by the blast radius.
 9. Inspect the diff against **Minimum change necessary**. Sequence the failing reproduction before the fix when the repository's delivery model allows it.
+10. Apply the **unslop** skill to the reply. Read it in full.
 
 **Reply:** what was broken, the confirmed root cause, the fix, and comparable failing-then-passing evidence.

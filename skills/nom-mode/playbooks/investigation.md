@@ -9,6 +9,7 @@ Use for read-only requests that ask how something works, why it exists, whether 
 3. Trace the relevant path end to end. Use read-only probes to test assumptions when static reading is not enough.
 4. Separate observed facts, supported inferences, and unknowns. Correct a false premise directly.
 5. Answer at the requested depth. For a decision, compare the real tradeoffs and make a recommendation.
+6. Apply the **unslop** skill to the reply. Read it in full.
 
 Do not edit files, open a PR, or quietly turn the investigation into implementation. If the requested deliverable changes, route the next work to the matching playbook.
 

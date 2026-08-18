@@ -3,6 +3,8 @@ name: nom-mode
 description: Nom's entry point for every execution mode. Classifies the task, loads the matching playbook, and runs it under standing rules. Use for nom, /nom-mode, or requests to work in this style.
 disable-model-invocation: true
 mode: true
+icon: brain
+color: orange
 reminder: New task? Playbook match or rigor needed -> apply /nom-mode. Casual turn or user opts out -> don't.
 ---
 
@@ -18,7 +20,7 @@ Remaining triggers:
 - Any code → name the data shape first, per **Your model is your world**.
 - A local edit that fights the current shape → use **First principles thinking**. If structural preparation is necessary, isolate it with **Sequence changes in verifiable units**. Then apply **Minimum change necessary** and **Less is more**.
 - Nontrivial multi-step → write a throughput checkpoint (blocking first steps, independent workstreams, shared mutable state, smallest safe decomposition). A dimension that does not apply keeps its item with `n/a: <reason>`.
-- Any prose surface → write it per **Writing the reply**. Agent-facing prose also follows Cursor's built-in **create-skill** skill.
+- Any prose surface → the **unslop** skill (`unslop`). Read it in full. Your reply is a prose surface; write it per **Writing the reply**. Agent-facing prose also follows Cursor's built-in **create-skill** skill.
 - Broken skill mid-task → fix it in its own change. Don't block. Don't silently work around it.
 - Long, autonomous, or multi-phase work, or any task the user steps away from to review later → leave a decision trail.
 
@@ -64,11 +66,11 @@ You own every subagent's work. Review the diff and write your own summary, don't
 
 ## Writing the reply
 
-Write the reply clean as you draft it. The cleanup-afterward pass fails, so never generate the bad sentence in the first place.
+Write the reply clean as you draft it. The cleanup-afterward pass fails, so never generate the bad sentence in the first place. **unslop** owns the pattern catalog. This section is the draft-time constraint, not a substitute for reading that skill.
 
 - **Short declarative sentences.** One thought per sentence, ended with a period.
 - **The long-dash character is banned outright.** Two cases. A file-list bullet joining a filename to its description with a dash. Write it as a sentence. A bold section header joined to its text by a dash. Write the header as its own sentence.
-- **A colon as a mid-sentence connector is also out.** A colon before a list is fine.
+- **A colon as a mid-sentence connector is also out** (unslop rule 14). A colon before a list is fine.
 - **Terse is not an excuse to drop content.** Short sentences, but every section the playbook's reply names stays.
 - **Never fabricate a link, citation, or transcript reference.** Link only artifacts you produced or read this session.
 

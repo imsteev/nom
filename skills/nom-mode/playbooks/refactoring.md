@@ -12,5 +12,6 @@ Use for renames, moves, extraction, inlining, deduplication, dependency correcti
 6. Migrate internal callers and delete the old path in the same change. Keep compatibility only for a real external contract.
 7. Prove the final behavior against the original pin and the real path.
 8. Confirm the result reduced total code, indirection, duplicated knowledge, or invalid states. Revert reshaping that only moved complexity.
+9. Apply the **unslop** skill to the reply. Read it in full.
 
 **Reply:** the pinned contract, the structural problem, the new shape, the equivalence evidence, and the complexity removed.

@@ -12,5 +12,6 @@ Use for measured slowness, excess resource use, throughput limits, or latency re
 6. Verify correctness on the real path. Account for memory, load, consistency, startup, and tail-latency tradeoffs introduced by the optimization.
 7. Add a regression check when the metric can be measured reliably in automation.
 8. Report the baseline, result, absolute and relative delta, measurement method, and remaining bottleneck. An inconclusive result is not a win.
+9. Apply the **unslop** skill to the reply. Read it in full.
 
 **Reply:** the baseline, dominant cost, chosen fix, comparable post-change result, tradeoffs, and evidence location.
