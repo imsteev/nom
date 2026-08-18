@@ -1,0 +1,8 @@
+{
+	"name": "nom",
+	"displayName": "nom",
+	"version": "0.0.1",
+	"description": "Nom agent workflows.",
+	"skills": "./skills/",
+	"agents": "./agents/"
+}
