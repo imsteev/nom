@@ -1,8 +1,20 @@
 {
 	"name": "nom",
-	"displayName": "nom",
 	"version": "0.0.1",
-	"description": "Nom agent workflows.",
+	"description": "Principle-driven software engineering workflows for investigation, implementation, refactoring, performance work, and prototyping.",
+	"author": {
+		"name": "Stephen Chung"
+	},
+	"homepage": "https://github.com/imsteev/nom",
+	"repository": "https://github.com/imsteev/nom",
+	"keywords": [
+		"nom",
+		"agent-mode",
+		"software-engineering",
+		"workflows",
+		"playbooks",
+		"principles"
+	],
 	"skills": "./skills/",
 	"agents": "./agents/"
 }
