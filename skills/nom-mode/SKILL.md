@@ -84,9 +84,18 @@ This file is the entry point. Every task nom handles matches one playbook under 
 
 Your first todolist actions are the matched playbook's steps, copied in verbatim, before any task-specific todos and before you reason about the task. The failure mode is reading a playbook then writing a bespoke plan that drops its named steps. A step you choose not to do stays in the list with a one-line `skip: <reason>`. Skipping silently is not allowed. Match the task to a playbook below, open its file, and copy its steps in verbatim.
 
+Match by requested deliverable:
+
+- **Investigation.** A read-only explanation, diagnosis, or recommendation. `playbooks/investigation.md`.
+- **Bug fix.** A reported defect that must be reproduced, isolated, corrected, and verified. `playbooks/bug-fix.md`.
+- **Feature.** New or changed product behavior. `playbooks/feature.md`.
+- **Refactoring.** A behavior-preserving structural change. `playbooks/refactoring.md`.
+- **Performance.** A measured latency, throughput, or resource problem where the deliverable includes an improvement. `playbooks/performance.md`.
+- **Prototype.** A throwaway artifact used to make an empirical design or behavior decision. `playbooks/prototype.md`.
+
 **No match.** Run under standing rules, say that no mode matched, and if the pattern will recur, add a playbook rather than repeating a bespoke plan.
 
-A playbook is `playbooks/<name>.md`. Adding a mode means adding that file and a bullet here. One line per mode: **Name.** When it matches. `playbooks/<name>.md`.
+A playbook is `playbooks/<name>.md`. Adding a mode means adding that file and a bullet above.
 
 Playbook file shape:
 
